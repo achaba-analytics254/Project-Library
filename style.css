@@ -52,6 +52,10 @@ body{
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-bottom: 2px solid var(--light-gray);
+}
+.table-header img{
+  height: 100px;
 }
 .add-book-btn {
   background: var(--secondary-color);
@@ -63,12 +67,18 @@ body{
   transition: var(--transition);
   font-size: 1rem;
 }
+.right{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
 table {
   border-collapse: collapse;
   border: 2px solid rgb(200 200 200);
   letter-spacing: 1px;
   font-size: 0.8rem;
   width: 100%;
+  margin-top: 20px;
 }
 caption{
   margin-bottom: 20px;
@@ -88,6 +98,7 @@ th{
 .add-book-btn:hover,
 .action-btn button:hover {
   opacity: 0.8;
+  transform: translateY(-2px);
 }
 .action-btn{
   display: flex;
@@ -101,6 +112,7 @@ th{
   color: var(--white);
   cursor: pointer;
   font-size: 1rem;
+  transition: var(--transition);
 }
 .edit-btn{
   background: var(--secondary-color);
@@ -189,12 +201,23 @@ input:focus:invalid{
   cursor: pointer;
   border: none;
   border-radius: var(--border-radius);
+  transition: var(--transition);
+}
+.form-btn button:hover{
+  transform: translateY(-2px);
 }
 .form-btn .submit-btn{
   background: var(--primary-color);
 }
+.form-btn .submit-btn:hover{
+  background: var(--secondary-color);
+}
+
 .form-btn .cancel-btn{
   background: var(--cancel-btn);
+}
+.form-btn .cancel-btn:hover{
+  opacity: .8;
 }
 #read_book{
   width: 100%;

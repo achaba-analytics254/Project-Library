@@ -11,26 +11,26 @@
       <form method="POST">
         <div class="form-header">
           <h4>Library Form</h4>
-          <p>Please fill this form to add a new book to the library</p>
+          <p>Please fill this form to add a new book to the Library</p>
         </div>
         <div class="form-group">
           <label for="book_author">Book Author:</label>
-          <input type="text" name="book_author" id="book_author" required />
+          <input type="text" name="book_author" id="book_author" placeholder="John Doe" required />
         </div>
         <div class="form-group">
           <label for="book_title">Book Title:</label>
-          <input type="text" name="book_title" id="book_title" required />
+          <input type="text" name="book_title" id="book_title" placeholder="Java Fundamentals" required />
         </div>
         <div class="form-group">
           <label for="book_pages">Number of Pages:</label>
-          <input type="number" name="book_pages" id="book_pages" required />
+          <input type="number" name="book_pages" id="book_pages" placeholder="200" required />
         </div>
         <div class="form-group">
           <label for="read_book">Book Status:</label>
           <select name="read_book" id="read_book" required>
-            <option value="read_book">Please select an option</option>
+            <!-- <option value="read_book"></option> -->
             <option value="Read">Read</option>
-            <option value="Unread">Unread</option>
+            <option value="Unread" selected>Unread</option>
             <option value="Wish List">Wishlist</option>
           </select>
         </div>
@@ -42,13 +42,17 @@
     </div>
     <div class="container">
       <div class="table-header">
-        <h2>My Library</h2>
+        <div class="right">
+            <h2>My Library</h2>
+        <img src="./images/books.avif" alt="Books stacked on top of eache other">
+        </div>
+
         <button class="add-book-btn" id="newBook">Add New Book</button>
       </div>
       <div class="wrapper">
         <table>
           <caption>
-            Library 📚
+            Library
           </caption>
           <thead>
             <tr>
