@@ -149,7 +149,7 @@ document.addEventListener('click', (e) => {
     const h4 = document.querySelector('h4');
     h4.textContent = 'Edit Form';
     const p = document.querySelector('p');
-    p.textContent = '';
+    p.textContent = 'Edit book details';
 
     // get current row values
     const id = row.children[0].textContent;
