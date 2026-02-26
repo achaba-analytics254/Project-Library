@@ -146,10 +146,6 @@ function addBookToLibrary(book) {
 document.addEventListener('click', (e) => {
   if (e.target.classList.contains('edit-btn')){
     const row = e.target.closest('tr');
-    const h4 = document.querySelector('h4');
-    h4.textContent = 'Edit Form';
-    const p = document.querySelector('p');
-    p.textContent = 'Edit book details';
 
     // get current row values
     const id = row.children[0].textContent;
