@@ -234,5 +234,14 @@ input:focus:invalid{
   border: none;
   outline: 1px solid var(--secondary-color);
 }
+.status-select {
+  padding: 5px 10px;
+  border: none;
+  font-size: 1rem;
+  /* border-radius: var(--border-radius);
+  border: 1px solid var(--light-blue); */
+  cursor: pointer;
+  font-family: 'Inter';
+}
 
 
