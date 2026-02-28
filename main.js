@@ -1,10 +1,10 @@
 // Project Library
 // create DOM elements
 const modal = document.getElementById("modalContainer");
-const editBtn = document.getElementById("edit");
-const deleteBtn = document.getElementById("delete");
+// const editBtn = document.getElementById("edit");
+// const deleteBtn = document.getElementById("delete");
 const addNewBtn = document.getElementById("newBook");
-const submitBtn = document.getElementById("submitBtn");
+// const submitBtn = document.getElementById("submitBtn");
 const cancelBtn = document.getElementById("cancelBtn");
 const form = document.querySelector("form");
 const tbody = document.getElementById("libraryBody");
@@ -18,6 +18,11 @@ addNewBtn.addEventListener("click", () => {
   delete modal.dataset.editingId; // make sure we aren't editing
   modal.classList.add("show");
   document.body.style.overflow = "hidden";
+  const h4 = document.querySelector("h4");
+  h4.textContent = "Library Form";
+  const p = document.querySelector("p");
+  p.textContent = "Please fill this form to add a new book to the Library.";
+
 });
 
 // form submission
@@ -36,17 +41,17 @@ form.addEventListener("submit", (e) => {
   }
 
   const editingId = modal.dataset.editingId;
-    const h4 = document.querySelector('h4');
-    h4.textContent = 'Edit Book Details';
-    const p = document.querySelector('p');
-    p.textContent = 'Please submit upon completion.'
+  const h4 = document.querySelector("h4");
+  h4.textContent = "Edit Book Details";
+  const p = document.querySelector("p");
+  p.textContent = "Please submit upon completion.";
 
   if (editingId) {
     // Editing existing book records
 
-    const book = myLibrary.find(b => b.id === editingId);
+    const book = myLibrary.find((b) => b.id === editingId);
     const row = [...tbody.rows].find(
-      r => r.children[0].textContent === editingId
+      (r) => r.children[0].textContent === editingId,
     );
 
     if (book && row) {
@@ -62,7 +67,6 @@ form.addEventListener("submit", (e) => {
     }
 
     delete modal.dataset.editingId;
-
   } else {
     // add a new row
     const id = crypto.randomUUID();
@@ -114,7 +118,7 @@ function addBookToLibrary(book) {
       <button class="delete-btn">Delete</button>
     </td>
     `;
-    tbody.appendChild(row);
+  tbody.appendChild(row);
 }
 
 // Edit the Form
@@ -123,7 +127,7 @@ document.addEventListener("click", (e) => {
     const row = e.target.closest("tr");
     const id = row.children[0].textContent;
 
-    const book = myLibrary.find(b => b.id === id);
+    const book = myLibrary.find((b) => b.id === id);
     if (!book) return;
 
     // Fill form
