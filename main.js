@@ -36,9 +36,14 @@ form.addEventListener("submit", (e) => {
   }
 
   const editingId = modal.dataset.editingId;
+    const h4 = document.querySelector('h4');
+    h4.textContent = 'Edit Book Details';
+    const p = document.querySelector('p');
+    p.textContent = 'Please submit upon completion.'
 
   if (editingId) {
     // Editing existing book records
+
     const book = myLibrary.find(b => b.id === editingId);
     const row = [...tbody.rows].find(
       r => r.children[0].textContent === editingId
