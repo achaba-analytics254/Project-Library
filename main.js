@@ -1,5 +1,5 @@
 // Project Library
-//DOM elements
+// create DOM elements
 const modal = document.getElementById("modalContainer");
 const editBtn = document.getElementById("edit");
 const deleteBtn = document.getElementById("delete");
@@ -15,7 +15,7 @@ const myLibrary = [];
 // add new book to the library
 addNewBtn.addEventListener("click", () => {
   form.reset();
-  delete modal.dataset.editingId; // make sure we are NOT editing
+  delete modal.dataset.editingId; // make sure we aren't editing
   modal.classList.add("show");
   document.body.style.overflow = "hidden";
 });
@@ -31,7 +31,7 @@ form.addEventListener("submit", (e) => {
 
   // return Error for empty fields
   if (!author || !title || !pages || !status) {
-    alert("Please fill all fields");
+    alert("Please fill all fields"); // will update in modal in future
     return;
   }
 
