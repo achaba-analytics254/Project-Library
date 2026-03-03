@@ -89,14 +89,24 @@ document.addEventListener("click", function (e) {
   }
 });
 
-// create a contructor
-function Book(id, author, title, pages, status) {
+// create a contructor using class
+class Book{
+  constructor(id, author, title, pages, status){
   this.id = id;
   this.author = author;
   this.title = title;
   this.pages = pages;
   this.status = status;
+  }
 }
+
+// function Book(id, author, title, pages, status) {
+//   this.id = id;
+//   this.author = author;
+//   this.title = title;
+//   this.pages = pages;
+//   this.status = status;
+// }
 
 // function to fill the table
 function addBookToLibrary(book) {
