@@ -10,6 +10,8 @@
   --gray: oklch(48.55% 0.00006 271.152);
   --light-gray: oklch(96.416% 0.00011 271.152);
   --tomato-color: oklch(68.736% 0.19124 32.205);
+  --error: oklch(59.153% 0.20203 21.222);
+  --success: oklch(64.014% 0.17506 146.763);
   --border-radius: 8px;
   --box-shadow-sm: 0 10px 15px rgba(0, 0, 0, 0.3);
   --transition: .3s all ease;
@@ -38,8 +40,9 @@ body{
 .container{
   padding: 30px;
   max-width: 1500px;
-  margin: 0 auto;
-  min-height: 100dvh;
+  margin: 20px auto;
+  box-shadow: var(--box-shadow-sm);
+  min-height: 90dvh;
   background: var(--white);
   /* visibility: hidden; */
 }
@@ -90,6 +93,7 @@ th {
   padding: 10px 20px;
   white-space: nowrap;
   font-size: 1rem;
+  background: var(--light-gray);
 }
 th{
   font-size: 1rem;
@@ -174,7 +178,8 @@ form{
     font-weight: 600;
     color: var(--text-color);
 }
-.form-group input{
+.form-group input,
+.form-group select{
     width: 100%;
     padding: 0.75rem 1rem;
     border: 1px solid var(--light-blue);
@@ -182,12 +187,12 @@ form{
     font-size: 1rem;
     transition: var(--transition);
 }
-input:invalid{
+/* input:invalid{
     box-shadow: 0 0 5px red;
 }
 input:focus:invalid{
     border: 1px solid  red;
-}
+} */
 .form-btn{
   display: flex;
   justify-content: space-between;
@@ -254,4 +259,28 @@ input:focus:invalid{
   border: 2px solid var(--primary-color);
 }
 
+.asterik{
+  color: var(--error);
+  font-size: .925rem;
+}
 
+.error-message{
+    color: var(--error);
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+    display: none;
+}
+
+.form-group.error .error-message {
+    display: block;
+}
+
+.form-group.error input,
+.form-group.error select {
+    border-color: var(--error);
+}
+
+.error-message.success {
+    color: var(--success);
+    display: block;
+}

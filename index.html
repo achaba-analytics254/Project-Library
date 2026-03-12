@@ -8,43 +8,95 @@
   </head>
   <body>
     <div class="modal-container" id="modalContainer">
-      <form method="POST">
+      <form method="POST" novalidate>
         <div class="form-header">
           <h4>Library Form</h4>
           <p>Please fill this form to add a new book to the Library</p>
         </div>
         <div class="form-group">
-          <label for="book_author">Book Author:</label>
-          <input type="text" name="book_author" id="book_author" placeholder="John Doe" required />
+          <label for="bookAuthor"
+            >Book Author: <span class="asterik">*</span></label
+          >
+          <input
+            type="text"
+            name="bookAuthor"
+            id="bookAuthor"
+            placeholder="John Doe"
+            required
+          />
+          <div
+            class="error-message"
+            id="bookAuthor-error"
+            aria-live="polite"
+          ></div>
         </div>
         <div class="form-group">
-          <label for="book_title">Book Title:</label>
-          <input type="text" name="book_title" id="book_title" placeholder="Java Fundamentals" required />
+          <label for="bookTitle"
+            >Book Title: <span class="asterik">*</span></label
+          >
+          <input
+            type="text"
+            name="bookTitle"
+            id="bookTitle"
+            placeholder="Java Fundamentals"
+            required
+          />
+          <div
+            class="error-message"
+            id="bookTitle-error"
+            aria-live="polite"
+          ></div>
         </div>
         <div class="form-group">
-          <label for="book_pages">Number of Pages:</label>
-          <input type="number" name="book_pages" id="book_pages" placeholder="200" required />
+          <label for="bookPages"
+            >Number of Pages: <span class="asterik">*</span></label
+          >
+          <input
+            type="number"
+            name="bookPages"
+            id="bookPages"
+            placeholder="200"
+            required
+          />
+          <div
+            class="error-message"
+            id="bookPages-error"
+            aria-live="polite"
+          ></div>
         </div>
         <div class="form-group">
-          <label for="read_book">Book Status:</label>
-          <select name="read_book" id="read_book" required>
-            <!-- <option value="read_book"></option> -->
+          <label for="bookStatus"
+            >Book Status: <span class="asterik">*</span></label
+          >
+          <select name="bookStatus" id="bookStatus" required>
             <option value="Read">Read</option>
             <option value="Unread" selected>Unread</option>
             <option value="Wish List">Wishlist</option>
           </select>
+          <div
+            class="error-message"
+            id="bookStatus-error"
+            aria-live="polite"
+          ></div>
         </div>
         <div class="form-btn">
-          <button type="submit" class="submit-btn" id="submitBtn">Submit</button>
-          <button type="button" class="cancel-btn" id="cancelBtn">Cancel</button>
+          <button type="submit" class="submit-btn" id="submitBtn">
+            Submit
+          </button>
+          <button type="button" class="cancel-btn" id="cancelBtn">
+            Cancel
+          </button>
         </div>
       </form>
     </div>
     <div class="container">
       <div class="table-header">
         <div class="right">
-            <h2>My Library</h2>
-        <img src="./images/books.avif" alt="Books stacked on top of eache other">
+          <h2>My Library</h2>
+          <img
+            src="./images/books.avif"
+            alt="Books stacked on top of eache other"
+          />
         </div>
 
         <button class="add-book-btn" id="newBook">Add New Book</button>
@@ -65,8 +117,7 @@
             </tr>
           </thead>
           <!-- Table body goes here remember rows are in  the main.js -->
-          <tbody id="libraryBody">
-          </tbody>
+          <tbody id="libraryBody"></tbody>
         </table>
       </div>
     </div>
